@@ -16,7 +16,7 @@ const evenGame = () => {
     const userAnswer = readlineSync.question('Your answer: ');
     return even === userAnswer
       ? console.log('Correct!') || iter(acc + 1)
-      : console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${even}.`);
+      : console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${even}.`) || console.log(`Let's try again, ${userName}`);
   };
   return iter(0);
 };
