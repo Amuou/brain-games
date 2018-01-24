@@ -6,9 +6,9 @@ const isEven = num => (num % 2 ? 'no' : 'yes');
 const rules = ('Answer "yes" if number even otherwise answer "no".\n');
 
 const data = () => {
-  const num = getRandomNum(0, 200);
-  const answer = isEven(num);
-  return cons(num, answer);
+  const expression = getRandomNum(0, 200);
+  const answer = isEven(expression);
+  return cons(expression, answer);
 };
 
 export default () => startGame(rules, data);
