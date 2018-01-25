@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import getRandomNum from '../helper';
 import startGame from '..';
 
-const rules = ('Balance the given number.\n');
+const rules = ('Balance the given number.');
 
 const balanceNum = (number) => {
   const digitsArr = String(number)

@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import getRandomNum from '../helper';
 import startGame from '..';
 
-const rules = ('What is the result of the expression?\n');
+const rules = ('What is the result of the expression?');
 
 const data = () => {
   const num1 = getRandomNum(0, 30);

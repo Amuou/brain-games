@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import getRandomNum from '../helper';
 import startGame from '..';
 
-const rules = ('What number is missing in this progression?\n');
+const rules = ('What number is missing in this progression?');
 
 const range = (start, step) => {
   const iter = (num = start, arr = []) => {
