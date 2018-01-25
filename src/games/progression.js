@@ -15,7 +15,7 @@ const range = (start, step) => {
 
 const data = () => {
   const start = getRandomNum(0, 500);
-  const step = getRandomNum(0, 30);
+  const step = getRandomNum(2, 30);
   const randomIndex = getRandomNum(0, 10);
 
   const progression = range(start, step);
