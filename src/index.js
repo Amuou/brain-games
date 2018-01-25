@@ -25,7 +25,7 @@ const startGame = (rules, data) => {
     }
 
     console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`);
-    console.log(`Let's try again, ${playerName}`);
+    return console.log(`Let's try again, ${playerName}`);
   };
 
   return iter();
