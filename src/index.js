@@ -19,9 +19,13 @@ const startGame = (rules, data) => {
     console.log(`Question: ${expression}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    return answer === userAnswer
-      ? console.log('Correct!') || iter(count + 1)
-      : console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`) || console.log(`Let's try again, ${playerName}`);
+    if (answer === userAnswer) {
+      console.log('Correct!');
+      return iter(count + 1);
+    }
+
+    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`);
+    console.log(`Let's try again, ${playerName}`);
   };
 
   return iter();
