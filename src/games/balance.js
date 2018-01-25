@@ -4,26 +4,23 @@ import startGame from '..';
 
 const rules = ('Balance the given number.\n');
 
-const balanceNum = (num) => {
-  const numArr = num.toString().split('');
-  const sum = numArr.reduce((acc, val) => Number(acc) + Number(val));
-  let rest = sum % numArr.length;
-  const flatNum = (sum - rest) / numArr.length;
+const balanceNum = (number) => {
+  const digitsArr = String(number)
+    .split('')
+    .map(num => Number(num));
+  const min = Math.min(...digitsArr);
+  const max = Math.max(...digitsArr);
 
-  const iter = (val = []) => {
-    const balancedArr = [flatNum, ...val];
-    return val.length < numArr.length ? iter(balancedArr) : val;
-  };
+  if (max - min < 2) {
+    return digitsArr
+      .sort((a, b) => a - b)
+      .join('');
+  }
 
-  const result = iter()
-    .map((val) => {
-      rest -= 1;
-      return rest >= 0 ? val + 1 : val;
-    })
-    .sort((a, b) => a - b)
-    .join('');
+  digitsArr[digitsArr.indexOf(min)] = min + 1;
+  digitsArr[digitsArr.indexOf(max)] = max - 1;
 
-  return result;
+  return balanceNum(digitsArr.join(''));
 };
 
 const data = () => {
