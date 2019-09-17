@@ -26,5 +26,5 @@ publish:
 	npm publish
 
 lint:
-	npm run eslint src/
+	npm run lint
 

@@ -1,31 +1,32 @@
-import { cons } from 'hexlet-pairs';
-import getRandomNum from '../helper';
-import startGame from '..';
+import { cons } from 'hexlet-pairs'
 
-const rules = ('What number is missing in this progression?');
+import startGame from '..'
+import getRandomNum from '../helper'
+
+const rules = 'What number is missing in this progression?'
 
 const range = (start, step) => {
   const iter = (num = start, arr = []) => {
-    const result = [...arr, num];
-    return result.length >= 10 ? result : iter(num + step, result);
-  };
+    const result = [...arr, num]
+    return result.length >= 10 ? result : iter(num + step, result)
+  }
 
-  return iter();
-};
+  return iter()
+}
 
 const data = () => {
-  const start = getRandomNum(0, 500);
-  const step = getRandomNum(2, 30);
-  const randomIndex = getRandomNum(0, 10);
+  const start = getRandomNum(0, 500)
+  const step = getRandomNum(2, 30)
+  const randomIndex = getRandomNum(0, 10)
 
-  const progression = range(start, step);
-
+  const progression = range(start, step)
   const expression = progression
     .map((val, index) => (index === randomIndex ? '..' : val))
-    .reduce((acc, value) => `${acc} ${value}`, '');
-  const answer = String(progression[randomIndex]);
+    .reduce((acc, value) => `${acc} ${value}`, '')
 
-  return cons(expression, answer);
-};
+  const answer = String(progression[randomIndex])
 
-export default () => startGame(rules, data);
+  return cons(expression, answer)
+}
+
+export default () => startGame(rules, data)

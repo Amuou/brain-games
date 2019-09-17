@@ -1,34 +1,33 @@
-import { cons } from 'hexlet-pairs';
-import getRandomNum from '../helper';
-import startGame from '..';
+import { cons } from 'hexlet-pairs'
 
-const rules = ('Balance the given number.');
+import startGame from '..'
+import getRandomNum from '../helper'
+
+const rules = 'Balance the given number.'
 
 const balanceNum = (number) => {
   const digitsArr = String(number)
     .split('')
-    .map(num => Number(num));
-  const min = Math.min(...digitsArr);
-  const max = Math.max(...digitsArr);
+    .map((num) => Number(num))
+  const min = Math.min(...digitsArr)
+  const max = Math.max(...digitsArr)
 
   if (max - min < 2) {
-    return digitsArr
-      .sort((a, b) => a - b)
-      .join('');
+    return digitsArr.sort((a, b) => a - b).join('')
   }
 
-  digitsArr[digitsArr.indexOf(min)] = min + 1;
-  digitsArr[digitsArr.indexOf(max)] = max - 1;
+  digitsArr[digitsArr.indexOf(min)] = min + 1
+  digitsArr[digitsArr.indexOf(max)] = max - 1
 
-  return balanceNum(digitsArr.join(''));
-};
+  return balanceNum(digitsArr.join(''))
+}
 
 const data = () => {
-  const num = getRandomNum(0, 5000);
+  const num = getRandomNum(0, 5000)
 
-  const answer = balanceNum(num);
+  const answer = balanceNum(num)
 
-  return cons(num, answer);
-};
+  return cons(num, answer)
+}
 
-export default () => startGame(rules, data);
+export default () => startGame(rules, data)

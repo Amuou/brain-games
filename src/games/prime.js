@@ -1,25 +1,26 @@
-import { cons } from 'hexlet-pairs';
-import getRandomNum from '../helper';
-import startGame from '..';
+import { cons } from 'hexlet-pairs'
 
-const rules = ('Is this number prime?');
+import startGame from '..'
+import getRandomNum from '../helper'
+
+const rules = 'Is this number prime?'
 
 const isPrime = (num) => {
   const iter = (acc = 2) => {
     if (acc >= num) {
-      return true;
+      return true
     }
-    return num % acc === 0 ? false : iter(acc + 1);
-  };
+    return num % acc === 0 ? false : iter(acc + 1)
+  }
 
-  return num < 2 ? false : iter();
-};
+  return num < 2 ? false : iter()
+}
 
 const data = () => {
-  const expression = getRandomNum(0, 200);
-  const answer = String(isPrime(expression));
+  const expression = getRandomNum(0, 200)
+  const answer = String(isPrime(expression))
 
-  return cons(expression, answer);
-};
+  return cons(expression, answer)
+}
 
-export default () => startGame(rules, data);
+export default () => startGame(rules, data)
