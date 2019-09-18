@@ -8,12 +8,12 @@ const rules = 'Is this number prime?'
 const isPrime = (num) => {
   const iter = (acc = 2) => {
     if (acc >= num) {
-      return true
+      return 'yes'
     }
-    return num % acc === 0 ? false : iter(acc + 1)
+    return num % acc === 0 ? 'no' : iter(acc + 1)
   }
 
-  return num < 2 ? false : iter()
+  return num < 2 ? 'no' : iter()
 }
 
 const data = () => {

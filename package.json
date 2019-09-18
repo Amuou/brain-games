@@ -7,7 +7,7 @@
     "lint": "npx eslint --fix .",
     "build": "npx rimfraf dist && NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
-    "babel-node": "babel-node",
+    "babel-node": "npx babel-node",
     "test": "echo \"Error: no test specified\""
   },
   "bin": {

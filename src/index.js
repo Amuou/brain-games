@@ -1,11 +1,13 @@
 import { car, cdr } from 'hexlet-pairs'
 import readlineSync from 'readline-sync'
 
-const startGame = (rules, data) => {
+export const askUserName = () => readlineSync.question('May I have your name? ')
+
+const startGame = (rules = '', data) => {
   console.log('Welcome to the Brain Games!\n')
   console.log(`${rules}\n`)
 
-  const playerName = readlineSync.question('May I have your name? ')
+  const playerName = askUserName()
   console.log(`Hello, ${playerName}!\n`)
 
   const iter = (count = 0) => {
@@ -25,7 +27,7 @@ const startGame = (rules, data) => {
     }
 
     console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`,
+      `${userAnswer} is the wrong answer ;(. The correct answer was ${answer}.`,
     )
     return console.log(`Let's try again, ${playerName}`)
   }
